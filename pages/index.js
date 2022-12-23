@@ -139,10 +139,29 @@ const Index = ({ products }) => {
         </div>
 
         <div className="right">
-          <img src={urlFor(products[0].image[0])} />
+          <div style={{ height: "100%", width: "100%", overflow: 'hidden', display: "flex", alignItems: 'center', justifyContent: "center" }}>
+            <motion.img src={urlFor(products[0].image[0])}
+
+              initial={{
+                scale: 0,
+                rotate: "150deg",
+              }}
+              animate={{
+                scale: 1,
+                rotate: 0,
+                transition: {
+                  delay: 0.5,
+                  type: 'spring',
+                  duration: 1.6,
+                  ease: 'easeInOut',
+                  bounce: 0.25,
+                }
+              }}
+            />
+          </div>
         </div>
 
-      </motion.div>
+      </motion.div >
     ))
 }
 export default Index

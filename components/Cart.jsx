@@ -92,7 +92,7 @@ const Cart = () => {
 
 
   return (
-        <motion.div className='cart-wrapper' ref={cartRef} 
+        <motion.div className='cart-wrapper' 
         initial={{
           background: "rgba(0, 0, 0, 0)",
         }}

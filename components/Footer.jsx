@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Link from 'next/link'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 import { client } from '../lib/client';
@@ -6,7 +6,9 @@ import { getStaticProps } from '../pages';
 
 
 
+
 const Footer = () => {
+
 
 
   return (
