@@ -36,8 +36,8 @@ body {
 
 .cart-item-qty {
   position: absolute;
-  left: 0px;
-  bottom: 0px;
+  top: 50%;
+  left: 0;
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -272,6 +272,7 @@ button {
 .button-buy-now-available {
   border: 1px solid #D0D0D0;
   background: #fff;
+  color: black;
   aspect-ratio: 4/1;
   height: 60px;
   transition: 0.25s ease-in-out;

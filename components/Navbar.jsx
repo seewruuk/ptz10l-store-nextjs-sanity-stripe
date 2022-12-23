@@ -10,11 +10,13 @@ const Navbar = () => {
   return (
     <div className='navbar-container'>
       <div className='cart-button'>
+        <div>
 
-        <button type="button" className='cart-icon' onClick={() => setShowCart((prev) => !prev)}>
-          <HiOutlineShoppingBag />
-          <span className='cart-item-qty'>{totalQuantities}</span>
-        </button>
+          <button type="button" className='cart-icon' onClick={() => setShowCart((prev) => !prev)}>
+            <HiOutlineShoppingBag />
+            <span className='cart-item-qty'>{totalQuantities}</span>
+          </button>
+        </div>
 
       </div>
     </div>
