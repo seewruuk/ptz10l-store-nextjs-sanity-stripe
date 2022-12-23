@@ -12,7 +12,7 @@ export const StateContext = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
 
-    const [loader, setLoader] = useState(false);
+    const [loader, setLoader] = useState(true);
 
 
     let foundProduct;
