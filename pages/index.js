@@ -15,7 +15,7 @@ const Index = ({ products }) => {
   const item = {
     hidden: {
       opacity: 0,
-      x: 500
+      x: 100
     },
     show: {
       opacity: 1,
@@ -31,7 +31,7 @@ const Index = ({ products }) => {
     },
     exit: {
       opacity: 0,
-      x: 500,
+      x: 100,
       transition: {
         ease: "easeInOut",
         duration: 0.8,
@@ -64,7 +64,7 @@ const Index = ({ products }) => {
         <motion.div className="left"
           initial={{
             opacity: 0,
-            x: 500
+            x: 100
           }}
 
           animate={{
@@ -175,14 +175,13 @@ const Index = ({ products }) => {
                 rotate: "150deg",
               }}
               animate={{
-                scale: 1,
+                scale: 0.95,
                 rotate: 0,
                 transition: {
                   delay: 0.5,
                   type: 'spring',
                   duration: 1.6,
                   ease: 'easeInOut',
-                  bounce: 0.25,
                 }
               }}
             />
