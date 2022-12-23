@@ -92,7 +92,8 @@ const Cart = () => {
 
 
   return (
-        <motion.div className='cart-wrapper' ref={cartRef} initial={{
+        <motion.div className='cart-wrapper' ref={cartRef} 
+        initial={{
           background: "rgba(0, 0, 0, 0)",
         }}
           animate={{
