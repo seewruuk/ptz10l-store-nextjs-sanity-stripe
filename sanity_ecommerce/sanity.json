@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "ecommerce"
+    "name": "przytajtoza"
   },
   "api": {
-    "projectId": "y6ns8rmi",
+    "projectId": "n2jn669u",
     "dataset": "production"
   },
   "plugins": [

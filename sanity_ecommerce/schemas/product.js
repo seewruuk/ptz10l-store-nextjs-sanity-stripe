@@ -5,36 +5,33 @@ export default {
     fields: [
         {
             name: 'image',
-            title: 'Image',
+            title: 'Zdjecie',
             type: 'array',
-            of: [{ type: 'image'}],
+            of: [{ type: 'image' }],
             options: {
                 hotspot: true,
             }
         },
         {
             name: 'name',
-            title: 'Name',
             type: 'string',
+            title: 'Tutul ksiazki',
         },
         {
-            name: 'slug',
-            title: 'Slug',
-            type: 'slug',
-            options: {
-                source: 'name',
-                maxLength: 90,
-            }
+            name: 'author',
+            type: 'string',
+            title: 'Autor',
         },
         {
             name: 'price',
-            title: 'Price',
             type: 'number',
+            title: 'Cena',
         },
         {
-            name: 'details',
-            title: 'Details',
-            type: 'string'
+            title: 'Dostępny?',
+            name: 'available',
+            type: 'boolean'
         }
     ]
+
 }

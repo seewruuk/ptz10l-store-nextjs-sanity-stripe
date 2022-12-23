@@ -1,21 +1,25 @@
 import React from 'react'
-import '../styles/globals.css'
+import '../styles/style.css'
 
 
-import { Layout } from '../components'
 
 import { StateContext } from './../context/StateContext';
-import {Toaster} from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import Layout from './../components/Layout';
+import { AnimatePresence } from 'framer-motion';
+
 
 
 function MyApp({ Component, pageProps }) {
   return (
-    <StateContext>
-      <Layout>
-        <Toaster />
-        <Component {...pageProps} />
-      </Layout>
-    </StateContext>
+    <AnimatePresence>
+      <StateContext>
+        <Layout>
+          <Toaster />
+          <Component {...pageProps} />
+        </Layout>
+      </StateContext>
+    </AnimatePresence>
   )
 }
 
