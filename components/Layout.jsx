@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
 
   return (
-    <div>
+    <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,15 +45,15 @@ const Layout = ({ children }) => {
           }
 
 
-          <motion.div key='new-loader'>
-            {children}
-          </motion.div>
+
+          {children}
+
         </AnimatePresence>
         <footer>
           <Footer />
         </footer>
       </motion.main>
-    </div>
+    </>
   )
 }
 

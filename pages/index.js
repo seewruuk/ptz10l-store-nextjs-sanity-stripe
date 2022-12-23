@@ -116,6 +116,8 @@ const Index = ({ products }) => {
                 <AiOutlinePlus />
               </div>
             </div>
+
+            
             <hr />
 
             <div className='button-section'>

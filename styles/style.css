@@ -1,15 +1,25 @@
 * {
   font-weight: normal;
 }
+#__next{
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: "Open Sans";
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 ::-webkit-scrollbar {
   width: 0px;
 }
-
+button{
+  margin: 0;
+  padding: 0;
+}
+#__next
 .main-container {
   max-width: 1400px;
   margin: auto;
@@ -139,7 +149,7 @@ body {
 
 .right::before {
   z-index: -99;
-  height: 81%;
+  height: 71%;
   aspect-ratio: 1/1;
   border-radius: 50%;
   content: '';
