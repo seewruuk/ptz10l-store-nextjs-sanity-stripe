@@ -12,6 +12,34 @@ const Index = ({ products }) => {
   const { qty, descQty, incQty, onAdd, buyNowButton, loader, setLoader } = useStateContext();
 
 
+  const item = {
+    hidden: {
+      opacity: 0,
+      x: 500
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: 'spring',
+        duration: 1.6,
+        ease: 'easeInOut',
+        stiffness: 100,
+        bounce: 0.25,
+
+      }
+    },
+    exit: {
+      opacity: 0,
+      x: 500,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.8,
+        stiffness: 400
+      },
+    },
+  };
+
 
   return (
 
@@ -32,43 +60,25 @@ const Index = ({ products }) => {
       </motion.div>
     ) : (
 
-      <motion.div className="home-page-container"
-        initial={{
-          opacity: 0,
-          x: 500
-        }}
-
-        animate={{
-          opacity: 1,
-          x: 0,
-          transition: {
-            type: 'spring',
-            duration: 1.6,
-            ease: 'easeInOut',
-            bounce: 0.25,
-
-          }
-        }}
-
-      >
+      <motion.div className="home-page-container" variants={item} initial="hidden" animate="show" exit="exit">
         <motion.div className="left"
-            initial={{
-              opacity: 0,
-              x: 500
-            }}
-    
-            animate={{
-              opacity: 1,
-              x: 0,
-              transition: {
-                type: 'spring',
-                duration: 1.6,
-                ease: 'easeInOut',
-                bounce: 0.25,
-    
-              }
-            }}
-        
+          initial={{
+            opacity: 0,
+            x: 500
+          }}
+
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              type: 'spring',
+              duration: 1.6,
+              ease: 'easeInOut',
+              bounce: 0.25,
+
+            }
+          }}
+
         >
           <div className="details">
             <h3>{products[0].author}</h3>
@@ -106,7 +116,7 @@ const Index = ({ products }) => {
                 <AiOutlinePlus />
               </div>
             </div>
-
+            <hr />
 
             <div className='button-section'>
               <button disabled={available ? false : true} type='button' className={`button-add-to-cart-${available ? "available" : "unavailable"}`}

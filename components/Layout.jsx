@@ -43,14 +43,12 @@ const Layout = ({ children }) => {
               </motion.div>
             )
           }
-        </AnimatePresence>
 
-        <AnimatePresence>
-          <motion.div key="loader2">
+
+          <motion.div key='new-loader'>
             {children}
           </motion.div>
         </AnimatePresence>
-
         <footer>
           <Footer />
         </footer>

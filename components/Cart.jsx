@@ -10,7 +10,6 @@ import { motion } from 'framer-motion';
 
 const Cart = () => {
 
-  const cartRef = useRef();
   const { setShowCart, cartItems, totalQuantities, totalPrice, onRemove, showCart } = useStateContext();
 
   function getWindowDimensions() {
@@ -120,7 +119,7 @@ const Cart = () => {
             (
               <div className='empty-cart'>
                 <AiOutlineShopping size={60} />
-                <h5>Twój koszyk jest pusty :/</h5>
+                <h5>Twój koszyk jest pusty</h5>
               </div>
             )}
 
