@@ -11,17 +11,8 @@ export const StateContext = ({ children }) => {
     const [qty, setQty] = useState(1);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
+
     const [loader, setLoader] = useState(true);
-
-    const [show, setShow] = useState(false);
-
-
-    function toggleShowStatusToFalse() {
-        setShow(false)
-    }
-    function toggleShowStatusToTrue() {
-        setShow(true)
-    }
 
 
     let foundProduct;
@@ -117,10 +108,6 @@ export const StateContext = ({ children }) => {
                     totalQuantities,
                     qty,
                     loader,
-                    show,
-                    setShow,
-                    toggleShowStatusToFalse,
-                    toggleShowStatusToTrue,
                     setLoader,
                     incQty,
                     descQty,

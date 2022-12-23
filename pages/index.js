@@ -35,12 +35,12 @@ const Index = ({ products }) => {
       <motion.div className="home-page-container"
         initial={{
           opacity: 0,
-          y: 500
+          x: 500
         }}
 
         animate={{
           opacity: 1,
-          y: 0,
+          x: 0,
           transition: {
             type: 'spring',
             duration: 1.6,
@@ -51,7 +51,25 @@ const Index = ({ products }) => {
         }}
 
       >
-        <div className="left">
+        <motion.div className="left"
+            initial={{
+              opacity: 0,
+              x: 500
+            }}
+    
+            animate={{
+              opacity: 1,
+              x: 0,
+              transition: {
+                type: 'spring',
+                duration: 1.6,
+                ease: 'easeInOut',
+                bounce: 0.25,
+    
+              }
+            }}
+        
+        >
           <div className="details">
             <h3>{products[0].author}</h3>
             <h1>
@@ -136,7 +154,7 @@ const Index = ({ products }) => {
               Nie czekaj dłużej i rozpocznij swoją przygodę z książką "Przeczytaj to za 10 lat".
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <div className="right">
           <div style={{ height: "100%", width: "100%", overflow: 'hidden', display: "flex", alignItems: 'center', justifyContent: "center" }}>
