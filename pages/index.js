@@ -12,34 +12,6 @@ const Index = ({ products }) => {
   const { qty, descQty, incQty, onAdd, buyNowButton, loader, setLoader } = useStateContext();
 
 
-  const item = {
-    hidden: {
-      opacity: 0,
-      y: 100
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        duration: 1.6,
-        ease: 'easeInOut',
-        stiffness: 100,
-        bounce: 0.25,
-
-      }
-    },
-    exit: {
-      opacity: 0,
-      y: 100,
-      transition: {
-        ease: "easeInOut",
-        duration: 0.8,
-        stiffness: 400
-      },
-    },
-  };
-
 
   return (
 
@@ -60,7 +32,24 @@ const Index = ({ products }) => {
       </motion.div>
     ) : (
 
-      <motion.div className="home-page-container" variants={item} initial="hidden" animate="show" exit="exit">
+      <motion.div className="home-page-container"
+        initial={{
+          opacity: 0,
+          y: 100
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            type: 'spring',
+            duration: 1.6,
+            ease: 'easeInOut',
+            stiffness: 100,
+            bounce: 0.25,
+          }
+        }}
+
+      >
         <motion.div className="left"
           initial={{
             opacity: 0,
@@ -117,7 +106,7 @@ const Index = ({ products }) => {
               </div>
             </div>
 
-            
+
             <hr />
 
             <div className='button-section'>

@@ -36,19 +36,19 @@ const Layout = ({ children }) => {
           <Navbar />
         </header>
         <AnimatePresence>
-          {
-            showCart && (
+        {
+          showCart && (
               <motion.div key='loader'>
                 <Cart />
               </motion.div>
-            )
-          }
-
-
-
-          {children}
+          )
+        }
 
         </AnimatePresence>
+
+
+        {children}
+
         <footer>
           <Footer />
         </footer>
