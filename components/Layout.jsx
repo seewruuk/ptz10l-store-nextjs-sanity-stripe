@@ -32,6 +32,21 @@ const Layout = ({ children }) => {
 
 
       <motion.main className='main-container'>
+        {/* ANIMACJA */}
+        {/* <motion.div className='switch-product-component'
+          initial={{
+            width: startAnimation ? "100%" : "0"
+          }}
+          animate={{
+            width: startAnimation ? "100%" : "0%",
+            transition: {
+              duration: 1,
+              ease: [0.65, -0.05, 0.01, 0.96],
+            }
+          }}
+        >
+        </motion.div> */}
+
         <header>
           <Navbar />
         </header>

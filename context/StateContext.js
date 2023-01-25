@@ -11,12 +11,35 @@ export const StateContext = ({ children }) => {
     const [qty, setQty] = useState(1);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
+    const [productId, setProductId] = useState(0);
 
     const [loader, setLoader] = useState(false);
 
 
     let foundProduct;
     let index;
+
+    const toggleProductId = () => {
+
+        setStartAnimation(true)
+
+        setTimeout(() => {
+            setQty(1);
+            console.log('button clicked')
+            var r = document.querySelector(':root');
+            if (productId == 1) {
+                setProductId(0)
+                r.style.setProperty('--themeColor', '#f41e46');
+                r.style.setProperty('--circleColor', '#FF9BA5');
+
+            } else {
+                setProductId(1)
+                r.style.setProperty('--themeColor', '#AE92CB');
+                r.style.setProperty('--circleColor', '#AE92CB');
+            }
+            setStartAnimation(false)
+        }, 0);
+    }
 
     const onAdd = (product, quantity) => {
         const checkProductInCart = cartItems.find((item) => item._id === product._id);
@@ -108,6 +131,9 @@ export const StateContext = ({ children }) => {
                     totalQuantities,
                     qty,
                     loader,
+                    prodcutId,
+                    setProductId,
+                    toggleProductId,
                     setLoader,
                     incQty,
                     descQty,
