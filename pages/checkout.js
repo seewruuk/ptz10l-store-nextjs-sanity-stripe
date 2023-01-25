@@ -13,7 +13,7 @@ const Checkout = () => {
         })
 
 
-    const submitHandler = (event) => {
+    const submitHandler = () => {
         const config = {
             SecureToken: '47394084-d1b2-4cae-919e-21341d2855ec',
             To: 'laczekktorylubiczekolade@gmail.com',
@@ -24,7 +24,7 @@ const Checkout = () => {
 
 
         if(window.Email){
-            window.Email.send(config);
+            window.Email.send(config).then(() => alert("message sent"));
         }
     }
 
