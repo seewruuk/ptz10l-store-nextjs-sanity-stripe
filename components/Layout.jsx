@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const Layout = ({ children }) => {
 
-  const { showCart, setLoader, loader } = useStateContext();
+  const { showCart, setLoader, loader, startAnimation } = useStateContext();
 
 
   setTimeout(() => {
@@ -29,11 +29,12 @@ const Layout = ({ children }) => {
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <title>Przeczytaj to za 10 lat</title>
       </Head>
-
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
 
       <motion.main className='main-container'>
         {/* ANIMACJA */}
-        {/* <motion.div className='switch-product-component'
+        <motion.div className='switch-product-component'
           initial={{
             width: startAnimation ? "100%" : "0"
           }}
@@ -45,19 +46,19 @@ const Layout = ({ children }) => {
             }
           }}
         >
-        </motion.div> */}
+        </motion.div>
 
         <header>
           <Navbar />
         </header>
         <AnimatePresence>
-        {
-          showCart && (
+          {
+            showCart && (
               <motion.div key='loader'>
                 <Cart />
               </motion.div>
-          )
-        }
+            )
+          }
 
         </AnimatePresence>
 

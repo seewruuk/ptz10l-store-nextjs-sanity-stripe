@@ -5,18 +5,19 @@ import { useStateContext } from './../context/StateContext';
 
 const Navbar = () => {
 
-  const { setShowCart, totalQuantities } = useStateContext();
+  const { setShowCart, totalQuantities, toggleProductId } = useStateContext();
 
   return (
     <div className='navbar-container'>
+      <div>
+        <button className='button-switch-book' onClick={() => toggleProductId()}>Zmień książkę</button>
+      </div>
       <div className='cart-button'>
-        <div>
 
-          <button type="button" className='cart-icon' onClick={() => setShowCart((prev) => !prev)}>
-            <HiOutlineShoppingBag />
-            <span className='cart-item-qty'>{totalQuantities}</span>
-          </button>
-        </div>
+        <button type="button" className='cart-icon' onClick={() => setShowCart((prev) => !prev)}>
+          <HiOutlineShoppingBag />
+          <span className='cart-item-qty'>{totalQuantities}</span>
+        </button>
 
       </div>
     </div>

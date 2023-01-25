@@ -11,7 +11,8 @@ export const StateContext = ({ children }) => {
     const [qty, setQty] = useState(1);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
-    const [productId, setProductId] = useState(0);
+    const [productId, setProductId] = useState(1);
+    const [startAnimation, setStartAnimation] = useState(false);
 
     const [loader, setLoader] = useState(false);
 
@@ -38,10 +39,41 @@ export const StateContext = ({ children }) => {
                 r.style.setProperty('--circleColor', '#AE92CB');
             }
             setStartAnimation(false)
-        }, 0);
+        }, 1000);
     }
 
+    // const onAdd = (product, quantity) => {
+    //     const checkProductInCart = cartItems.find((item) => item._id === product._id);
+    //     setTotalPrice((prevTotalPrice) => {
+    //         return Number((prevTotalPrice + product.price * quantity).toFixed(2))
+    //     }
+    //     )
+    //     setTotalQuantities((prevTotalQuantity) => prevTotalQuantity + quantity);
+
+
+    //     if (checkProductInCart) {
+
+
+    //         const updatedCartItems = cartItems.map((cartProduct) => {
+    //             if (cartProduct._id === product._id) return {
+    //                 ...cartProduct,
+    //                 quantity: cartProduct.quantity + quantity
+    //             }
+
+    //         })
+
+    //         setCartItems(updatedCartItems);
+    //     } else {
+    //         product.quantity = quantity;
+
+    //         setCartItems([...cartItems, { ...product }]);
+    //     }
+    //     toast.success(`Pomyślnie dodano ${qty} sztuk do koszyka!`);
+    // }
+
+
     const onAdd = (product, quantity) => {
+
         const checkProductInCart = cartItems.find((item) => item._id === product._id);
         setTotalPrice((prevTotalPrice) => {
             return Number((prevTotalPrice + product.price * quantity).toFixed(2))
@@ -52,36 +84,68 @@ export const StateContext = ({ children }) => {
 
         if (checkProductInCart) {
 
-
-            const updatedCartItems = cartItems.map((cartProduct) => {
-                if (cartProduct._id === product._id) return {
-                    ...cartProduct,
-                    quantity: cartProduct.quantity + quantity
+            const newState = cartItems.map((cartProduct) => {
+                if(cartProduct._id === product._id){
+                    return{
+                        ...cartProduct,
+                        quantity: cartProduct.quantity + quantity
+                    };
                 }
+                return cartProduct
+            });
+            setCartItems(newState);
+            // const updatedCartItems = cartItems.map((cartProduct) => {
+            //     if (cartProduct._id === product._id) return {
+            //         ...cartProduct,
+            //         quantity: cartProduct.quantity + quantity
+            //     }
+            // })
 
-            })
-
-            setCartItems(updatedCartItems);
+            // setCartItems(updatedCartItems);
+            
         } else {
             product.quantity = quantity;
 
             setCartItems([...cartItems, { ...product }]);
         }
-        toast.success(`Pomyślnie dodano ${qty} sztuk do koszyka!`);
+        toast.success(`Pomyślnie dodano do koszyka`);
     }
 
 
+
+    // const onRemove = (product) => {
+    //     foundProduct = cartItems.find((item) => item._id === product._id)
+    //     const newCartItems = cartItems.filter((item) => item._id !== product._id);
+
+    //     setTotalPrice((prevTotalPrice) => prevTotalPrice = 0);
+    //     setTotalQuantities((prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity)
+    //     setCartItems(newCartItems)
+
+    //     toast.success(`Usunięto produkt z koszyka`);
+    // }
 
     const onRemove = (product) => {
         foundProduct = cartItems.find((item) => item._id === product._id)
         const newCartItems = cartItems.filter((item) => item._id !== product._id);
 
-        setTotalPrice((prevTotalPrice) => prevTotalPrice = 0);
+        // setTotalPrice((prevTotalPrice) => prevTotalPrice = prevTotalPrice - foundProduct.quantity * foundProduct.price);
+
+        setTotalPrice((prevTotalPrice) => {
+            let newPrice;
+
+            newPrice = prevTotalPrice;
+            if(newPrice - Number((prevTotalPrice - foundProduct.quantity * foundProduct.price).toFixed(2)) < 0){
+                return 0;
+            }
+            return Number((prevTotalPrice - foundProduct.quantity * foundProduct.price).toFixed(2))
+        })
+
         setTotalQuantities((prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity)
         setCartItems(newCartItems)
+        toast.error(`Usunięto produkt z koszyka`);
 
-        toast.success(`Usunięto produkt z koszyka`);
     }
+
 
 
     const toggleCartItemQuantity = (id, value) => {
@@ -131,7 +195,8 @@ export const StateContext = ({ children }) => {
                     totalQuantities,
                     qty,
                     loader,
-                    prodcutId,
+                    productId,
+                    startAnimation,
                     setProductId,
                     toggleProductId,
                     setLoader,

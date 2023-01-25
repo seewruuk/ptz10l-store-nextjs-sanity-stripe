@@ -10,11 +10,15 @@ export default async function handler(req, res) {
         mode: 'payment',
         payment_method_types: [
 
-          'card', 'blik', 'p24'
+          'card', 'blik', 'p24',
         ],
+        
         billing_address_collection: 'required',
+        phone_number_collection: {
+          "enabled": true
+        },
         shipping_options: [
-          { shipping_rate: 'shr_1MIxu7CBGMcyvGRtE85VIfvC' },
+          { shipping_rate: 'shr_1MH1QPCBGMcyvGRtxhfWXYDr' },
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;

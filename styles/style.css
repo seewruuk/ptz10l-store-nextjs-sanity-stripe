@@ -6,6 +6,28 @@
   padding: 0;
 }
 
+:root {
+  --themeColor: #AE92CB;
+  --circleColor: #AE92CB;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.switch-product-component {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(0, 0, 0);
+  height: 100vmax;
+  width: 0;
+}
+
 body {
   font-family: "Open Sans";
   height: 100%;
@@ -31,7 +53,7 @@ button{
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 
@@ -156,7 +178,7 @@ button{
   top: 30%;
   left: 40%;
   transform: translate(-50%, -50%);
-  background: #AE92CB;
+  background: var(--circleColor);
   position: absolute;
 }
 
@@ -178,7 +200,7 @@ h3 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.56rem;
   margin: 0px 0px;
   padding: 0;
 
@@ -192,7 +214,7 @@ h1 {
 }
 
 .new-price {
-  color: #AE92CB;
+  color: var(--themeColor);
 }
 
 .quantity-container {
@@ -274,7 +296,7 @@ button {
 }
 
 .button-add-to-cart-available:hover {
-  background: #AE92CB;
+  background: var(--themeColor);
   cursor: pointer;
   transition: 0.25s ease-in-out;
 }
@@ -290,8 +312,8 @@ button {
 
 .button-buy-now-available:hover {
   transition: 0.25s ease-in-out;
-  color: #AE92CB;
-  border: 1px solid #AE92CB;
+  color: var(--themeColor);
+  border: 1px solid var(--themeColor);
   cursor: pointer;
 }
 
@@ -379,6 +401,8 @@ button {
   /* border: 1px solid blue; */
   height: 500px;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
 
 }
@@ -436,7 +460,7 @@ button {
   font-size: 21px;
   display: flex;
   align-items: center;
-  color: #AE92CB;
+  color: var(--themeColor);
 }
 
 .cart-subtotal {
@@ -453,7 +477,7 @@ button {
 }
 
 .subtotal-top span {
-  color: #AE92CB;
+  color: var(--themeColor);
 }
 
 h5 {
@@ -466,7 +490,7 @@ h5 {
 }
 
 .button-pay-with-stripe {
-  background: #AE92CB;
+  background: var(--themeColor);
   color: #fff;
   width: 100%;
   height: 50px;
@@ -511,7 +535,7 @@ h5 {
 }
 
 .button-back-to-mail-page:hover {
-  background: #AE92CB;
+  background: var(--themeColor);
   transition: 0.35s ease-in-out;
   cursor: pointer;
 }

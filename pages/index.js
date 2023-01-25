@@ -6,10 +6,12 @@ import { useEffect } from 'react';
 import Loader from '../components/Loader';
 const Index = ({ products }) => {
 
-  const discount = products[0].price < 39.99 ? true : false;
-  const available = products[0].available ? true : false;
 
-  const { qty, descQty, incQty, onAdd, buyNowButton, loader, setLoader } = useStateContext();
+  const { qty, descQty, incQty, onAdd, buyNowButton, loader, setLoader, productId } = useStateContext();
+
+  
+  const discount = products[productId].price < 39.99 ? true : false;
+  const available = products[productId].available ? true : false;
 
 
 
@@ -70,9 +72,9 @@ const Index = ({ products }) => {
 
         >
           <div className="details">
-            <h3>{products[0].author}</h3>
+            <h3>{products[productId].author}</h3>
             <h1>
-              {products[0].name}
+              {products[productId].name}
             </h1>
             <span className='price'>
               {
@@ -80,12 +82,12 @@ const Index = ({ products }) => {
                   <>
                     <s className='prev-price'>39.99 zł</s>
                     <span className='new-price'>
-                      {products[0].price} zł
+                      {products[productId].price} zł
                     </span>
                   </>
                 ) : (
                   <span className='new-price'>
-                    {products[0].price} zł
+                    {products[productId].price} zł
                   </span>
                 )
               }
@@ -111,13 +113,13 @@ const Index = ({ products }) => {
 
             <div className='button-section'>
               <button disabled={available ? false : true} type='button' className={`button-add-to-cart-${available ? "available" : "unavailable"}`}
-                onClick={() => onAdd(products[0], qty)}
+                onClick={() => onAdd(products[productId], qty)}
               >
                 Dodaj do koszyka
               </button>
 
               <button type='button' disabled={available ? false : true} className={`button-buy-now-${available ? "available" : "unavailable"}`}
-                onClick={() => buyNowButton(products[0], qty)}
+                onClick={() => buyNowButton(products[productId], qty)}
               >
                 Kup teraz
               </button>
@@ -159,7 +161,7 @@ const Index = ({ products }) => {
 
         <div className="right">
           <div style={{ height: "100%", width: "100%", overflow: 'hidden', display: "flex", alignItems: 'center', justifyContent: "center" }}>
-            <motion.img src={urlFor(products[0].image[0])}
+            <motion.img src={urlFor(products[productId].image[0])}
 
               initial={{
                 scale: 0,

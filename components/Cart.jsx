@@ -5,6 +5,7 @@ import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
+import Link from 'next/link'
 
 
 
@@ -170,9 +171,15 @@ const Cart = () => {
 
 
           <div className='subtotal-bottom'>
-            <button type='button' className='button-pay-with-stripe' onClick={handleCheckout}>
-              Przejdź do płatności
-            </button>
+            {/* <Link href="/checkout"> */}
+              
+
+              <button type='button' className='button-pay-with-stripe'
+              onClick={handleCheckout}
+              >
+                Przejdź do płatności
+              </button>
+            {/* </Link> */}
           </div>
         </div>
       </motion.div>
