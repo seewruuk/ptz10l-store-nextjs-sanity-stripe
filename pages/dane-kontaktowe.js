@@ -5,11 +5,12 @@ import React, { useEffect } from 'react'
 
 const DaneKontaktowe = () => {
 
+
+
     useEffect(() => {
         return () => {
             var r = document.querySelector('.button-switch-book');
             r.style.setProperty('opacity', '0');
-            setShowCart(false)
         }
     }, [])
 

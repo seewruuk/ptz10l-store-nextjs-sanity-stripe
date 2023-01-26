@@ -7,7 +7,7 @@ import Loader from '../components/Loader';
 const Index = ({ products }) => {
 
 
-  const { qty, descQty, incQty, onAdd, buyNowButton, loader, setLoader, productId } = useStateContext();
+  const { qty, descQty, incQty, onAdd, buyNowButton, loader, productId } = useStateContext();
 
   
   const discount = products[productId].price < 39.99 ? true : false;

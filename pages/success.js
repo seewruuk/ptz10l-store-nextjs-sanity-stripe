@@ -7,13 +7,12 @@ const Success = () => {
 
 
 
-    const { setCartItems, setTotalPrice, setTotalQuantities, setLoader, setShowCart } = useStateContext();
+    const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
     useEffect(() => {
         return () => {
             var r = document.querySelector('.button-switch-book');
             r.style.setProperty('opacity', '0');
-            setShowCart(false)
             localStorage.clear();
             setCartItems([]);
             setTotalPrice(0);

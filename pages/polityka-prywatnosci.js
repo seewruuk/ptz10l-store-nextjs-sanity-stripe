@@ -8,7 +8,6 @@ const PolitykaPrywatnosci = () => {
         return () => {
             var r = document.querySelector('.button-switch-book');
             r.style.setProperty('opacity', '0');
-            setShowCart(false)
         }
     }, [])
 

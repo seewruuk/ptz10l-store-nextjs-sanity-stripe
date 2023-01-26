@@ -73,7 +73,7 @@ const Checkout = () => {
                 <div className="checkout-option1">
                     <div>
                         <h1>Zapłać za pobraniem</h1>
-                        <h2 className='checkout-price'>Całkowity koszt: <span style={{fontWeight: "bold"}}>{
+                        <h2 className='checkout-price'>Całkowity koszt: <span style={{ fontWeight: "bold" }}>{
                             totalPrice + 19
                         } PLN </span> </h2>
                     </div>
@@ -110,9 +110,9 @@ const Checkout = () => {
 
                 <div className="checkout-option2">
                     <h1>Zapłać Online</h1>
-                    <h2 className='checkout-price'>Całkowity koszt: <span style={{fontWeight: "bold"}}>{
-                            totalPrice + 16
-                        } PLN </span> </h2>
+                    <h2 className='checkout-price'>Całkowity koszt: <span style={{ fontWeight: "bold" }}>{
+                        totalPrice + 16
+                    } PLN </span> </h2>
                     <button type='button' className='button-pay-with-stripe' onClick={handleCheckout}>
                         Przejdź do płatności
                     </button>
