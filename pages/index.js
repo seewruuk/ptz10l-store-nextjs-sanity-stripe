@@ -72,6 +72,7 @@ const Index = ({ products }) => {
 
         >
           <div className="details">
+            
             <h3>{products[productId].author}</h3>
             <h1>
               {products[productId].name}

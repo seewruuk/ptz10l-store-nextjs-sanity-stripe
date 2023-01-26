@@ -144,7 +144,7 @@ const Cart = () => {
 
                   <div className='product-details-bottom'>
                     <div>Ilość: {item.quantity}</div>
-                    <div onClick={() => onRemove(item)}>Usuń</div>
+                    <div className='remove-from-cart-button' onClick={() => onRemove(item)}>Usuń</div>
                   </div>
 
 
@@ -160,7 +160,7 @@ const Cart = () => {
         <div className='cart-subtotal'>
           <div className='subtotal-top'>
             <div>
-              <h5>Podusmowanie*</h5>
+              <h5>Podsumowanie*</h5>
               <span>*koszt wysyłki w następnym kroku</span>
             </div>
 

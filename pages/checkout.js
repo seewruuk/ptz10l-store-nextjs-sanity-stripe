@@ -69,7 +69,7 @@ const Checkout = () => {
 
                 <div className="checkout-option1">
                     <div>
-                        <h1>Zapłać przy odbiorze</h1>
+                        <h1>Zapłać za pobraniem</h1>
                         <h2 className='checkout-price'>Całkowity koszt: <span style={{fontWeight: "bold"}}>{
                             totalPrice + 19
                         } PLN </span> </h2>
@@ -86,8 +86,8 @@ const Checkout = () => {
                             </div>
                             <div className="formFlex">
                                 <input type="text" name="address" placeholder='Ulica' required value={formState.address} onChange={handleFormChange} />
-                                <input type="text" name="number" placeholder='Number budynku' required value={formState.number} onChange={handleFormChange} />
-                                <input type="text" name="apartment" placeholder='Number lokalu' required value={formState.apartment} onChange={handleFormChange} />
+                                <input type="text" name="number" placeholder='Numer budynku' required value={formState.number} onChange={handleFormChange} />
+                                <input type="text" name="apartment" placeholder='Numer lokalu' required value={formState.apartment} onChange={handleFormChange} />
                             </div>
                             <div className="formFlex">
                                 <input type="text" name="postcode" placeholder='Kod pocztowy' required value={formState.postcode} onChange={handleFormChange} />
