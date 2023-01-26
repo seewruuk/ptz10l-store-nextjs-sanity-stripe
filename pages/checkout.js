@@ -1,10 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStateContext } from './../context/StateContext';
+import { createOrder } from './../lib/orderHandler';
+import getStripe from '../lib/getStripe';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/router';
+
 
 
 const Checkout = () => {
 
-    const {cartItems} = useStateContext();
+    const router = useRouter();
+
+    const { cartItems, totalPrice, setShowCart, setCartItems } = useStateContext();
+
+    useEffect(() => {
+        return () => {
+            setShowCart(false)
+        }
+    }, [])
+
 
     const [formState, setFormState] = useState({});
     const handleFormChange = (event) =>
@@ -12,33 +26,98 @@ const Checkout = () => {
             ...formState, [event.target.name]: event.target.value
         })
 
+    const submitHandler = async (event) => {
 
-    const submitHandler = (event) => {
         event.preventDefault();
-        const config = {
-            SecureToken: '47394084-d1b2-4cae-919e-21341d2855ec',
-            To: 'laczekktorylubiczekolade@gmail.com',
-            From: formState.email,
-            Subject: formState.name,
-            Body: "jebac policje"
-        }
+
+        const firstItem = cartItems[0] && cartItems[0].quantity
+        const secondItem = cartItems[1] && cartItems[1].quantity
+
+        const total = totalPrice;
+        const id = await createOrder({ ...formState, total, firstItem, secondItem })
+
+        setCartItems([]);
+        router.push('/success');
+
+        console.log("Sanity order place", id)
+    }
 
 
-        if(window.Email){
-            window.Email.send(config).then(() => alert("message sent"));
-        }
+    const handleCheckout = async () => {
+        const stripe = await getStripe();
+
+        const response = await fetch('/api/stripe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cartItems),
+        });
+        console.log(cartItems)
+        if (response.statusCode === 500) return;
+
+        const data = await response.json();
+        toast.loading('Ładowanie systemu płatności...');
+
+
+        stripe.redirectToCheckout({ sessionId: data.id });
     }
 
     return (
-        <>
-            <form onSubmit={submitHandler}>
-                <input placeholder='Imię i nazwisko' required type="name" name="name" value={formState.name} onChange={handleFormChange} />
-                <input placeholder='Adress zamieszkania' type="address" name="address" value={formState.address} onChange={handleFormChange} />
-                <input placeholder='Adres email' type="email" name="email" value={formState.email} onChange={handleFormChange} />
-                <input placeholder='Numer telefonu' type="phone" name="phone" value={formState.phone} onChange={handleFormChange} />
-                <input type="submit" value="submit" />
-            </form>
-        </>
+        <div className='checkout-container'>
+            <div className='checkout-wrapper'>
+
+                <div className="checkout-option1">
+                    <div>
+                        <h1>Zapłać przy odbiorze</h1>
+                        <h2 className='checkout-price'>Całkowity koszt: <span style={{fontWeight: "bold"}}>{
+                            totalPrice + 19
+                        } PLN </span> </h2>
+                    </div>
+                    <div className='form-content'>
+                        <form onSubmit={submitHandler}>
+                            <div className="formFlex">
+                                <input type="text" name="firstname" placeholder='Imię' required value={formState.firstname} onChange={handleFormChange} />
+                                <input type="text" name="secondname" placeholder='Nazwisko' required value={formState.secondname} onChange={handleFormChange} />
+                            </div>
+                            <div className='formFlex' >
+                                <input type="text" name="email" placeholder='Adres email' required value={formState.email} onChange={handleFormChange} />
+                                <input type="text" name="phone" placeholder='Numer telefonu' required value={formState.phone} onChange={handleFormChange} />
+                            </div>
+                            <div className="formFlex">
+                                <input type="text" name="address" placeholder='Ulica' required value={formState.address} onChange={handleFormChange} />
+                                <input type="text" name="number" placeholder='Number budynku' required value={formState.number} onChange={handleFormChange} />
+                                <input type="text" name="apartment" placeholder='Number lokalu' required value={formState.apartment} onChange={handleFormChange} />
+                            </div>
+                            <div className="formFlex">
+                                <input type="text" name="postcode" placeholder='Kod pocztowy' required value={formState.postcode} onChange={handleFormChange} />
+                                <input type="text" name="city" placeholder='Miasto' required value={formState.city} onChange={handleFormChange} />
+                            </div>
+                            <div className="formFlex">
+                                <textarea name="warning" placeholder='uwagi'></textarea>
+                            </div>
+                            <input type="submit" value="Złóż zamówienie" />
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+                <div className="checkout-option2">
+                    <h1>Zapłać Online</h1>
+                    <h2 className='checkout-price'>Całkowity koszt: <span style={{fontWeight: "bold"}}>{
+                            totalPrice + 16
+                        } PLN </span> </h2>
+                    <button type='button' className='button-pay-with-stripe' onClick={handleCheckout}>
+                        Przejdź do płatności
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
     )
 }
 

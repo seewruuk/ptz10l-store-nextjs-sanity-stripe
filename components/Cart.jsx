@@ -6,7 +6,7 @@ import getStripe from '../lib/getStripe';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import Link from 'next/link'
-
+import { useRouter } from 'next/router';
 
 
 const Cart = () => {
@@ -39,6 +39,7 @@ const Cart = () => {
     return windowDimensions;
   }
 
+  const router = useRouter();
 
 
   const { width } = useWindowDimensions()
@@ -171,15 +172,12 @@ const Cart = () => {
 
 
           <div className='subtotal-bottom'>
-            {/* <Link href="/checkout"> */}
-              
-
-              <button type='button' className='button-pay-with-stripe'
-              onClick={handleCheckout}
-              >
+            <Link href={`${ cartItems.length == 0 ? '/' : '/checkout' }`}
+            >
+              <button type='button' className='button-pay-with-stripe'>
                 Przejdź do płatności
               </button>
-            {/* </Link> */}
+            </Link>
           </div>
         </div>
       </motion.div>

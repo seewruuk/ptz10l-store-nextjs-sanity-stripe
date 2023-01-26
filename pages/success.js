@@ -20,6 +20,7 @@ const Success = () => {
 
 
 
+
     return (
 
 
@@ -27,7 +28,7 @@ const Success = () => {
             <div className='success-page-container'>
                 <h3>Marcel Nowakowski</h3>
                 <h1>Dziękuje za złożenie zamówienia!</h1>
-                <p>W wiadomości email otrzymasz szczegóły dotyczące swojego zamówienia.</p>
+                <p>Twoje zamówienie jest w trakcie realizacji</p>
                 <p>W razie wszelkich pytań zapraszam do kontaktu:</p>
 
                 <p>
