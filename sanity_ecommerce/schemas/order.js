@@ -48,11 +48,7 @@ export default {
             title: "Miasto",
             type: "string",
         },
-        // {
-        //     name: 'warning',
-        //     title: "Uwagi",
-        //     type: "text",
-        // },
+
         {
             name: 'total',
             title: "Total",
@@ -68,46 +64,11 @@ export default {
             title: "Czerwona",
             type: "number"
         },
-
+        {
+            name: 'warning',
+            title: "Uwagi",
+            type: "text",
+        },
 
     ]
-
-
-    // fields: [
-    //     {
-    //         name: 'name',
-    //         title: "Name",
-    //         type: "string",
-    //     },
-    //     {
-    //         name: 'address',
-    //         title: "address",
-    //         type: "string",
-    //     },
-    //     {
-    //         name : 'email',
-    //         title: "email",
-    //         type: "email"
-    //     },
-    //     {
-    //         name: 'phone',
-    //         title: "Phone",
-    //         type: "string",
-    //     },
-    //     {
-    //         name: 'total',
-    //         title: "Total",
-    //         type: "number"
-    //     },
-    //     {
-    //         name: 'firstItem',
-    //         title: "Czarna",
-    //         type: "number"
-    //     },
-    //     {
-    //         name: 'secondItem',
-    //         title: "Czerwona",
-    //         type: "number"
-    //     },
-    // ]
 }

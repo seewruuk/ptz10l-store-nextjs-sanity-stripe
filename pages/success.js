@@ -5,18 +5,15 @@ import { runFireworks } from './../lib/utils';
 
 const Success = () => {
 
+
+
+    const { setCartItems, setTotalPrice, setTotalQuantities, setLoader, setShowCart } = useStateContext();
+
     useEffect(() => {
         return () => {
             var r = document.querySelector('.button-switch-book');
             r.style.setProperty('opacity', '0');
             setShowCart(false)
-        }
-    }, [])
-
-    const { setCartItems, setTotalPrice, setTotalQuantities, setLoader } = useStateContext();
-
-    useEffect(() => {
-        return () => {
             localStorage.clear();
             setCartItems([]);
             setTotalPrice(0);

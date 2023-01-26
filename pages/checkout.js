@@ -97,7 +97,7 @@ const Checkout = () => {
                                 <input type="text" name="city" placeholder='Miasto' required value={formState.city} onChange={handleFormChange} />
                             </div>
                             <div className="formFlex">
-                                <textarea name="warning" placeholder='uwagi'></textarea>
+                                <textarea name="warning" value={formState.warning} placeholder='uwagi' onChange={handleFormChange}></textarea>
                             </div>
                             <input type="submit" value="Złóż zamówienie" />
 

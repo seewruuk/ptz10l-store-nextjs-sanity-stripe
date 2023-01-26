@@ -25,6 +25,7 @@ export default async function handler(req, res) {
                     total: newOrder.total,
                     firstItem: newOrder.firstItem,
                     secondItem: newOrder.secondItem,
+                    warning: newOrder.warning,
 
                 }).then((data) => {
                     res.status(200).json(data._id);
