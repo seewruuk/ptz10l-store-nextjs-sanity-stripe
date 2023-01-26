@@ -1,12 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStateContext } from '../context/StateContext';
 import { AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai'
 import { urlFor } from '../lib/client';
-import getStripe from '../lib/getStripe';
-import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import Link from 'next/link'
-import { useRouter } from 'next/router';
 
 
 const Cart = () => {
@@ -38,34 +35,9 @@ const Cart = () => {
 
     return windowDimensions;
   }
-
-  const router = useRouter();
-
-
   const { width } = useWindowDimensions()
-
   const isMobile = width <= "1100" ? true : false;
 
-
-  const handleCheckout = async () => {
-    const stripe = await getStripe();
-
-    const response = await fetch('/api/stripe', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(cartItems),
-    });
-    console.log(cartItems)
-    if (response.statusCode === 500) return;
-
-    const data = await response.json();
-    toast.loading('Ładowanie systemu płatności...');
-
-
-    stripe.redirectToCheckout({ sessionId: data.id });
-  }
 
 
   const item = {

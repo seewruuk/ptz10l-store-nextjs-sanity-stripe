@@ -53,6 +53,7 @@ input:focus {
 
 }
 .button-switch-book{
+  opacity: 0;
   padding: 5px 12px;
   background: var(--themeColor);
   color: #fff;

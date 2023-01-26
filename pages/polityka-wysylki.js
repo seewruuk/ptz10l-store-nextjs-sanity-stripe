@@ -1,8 +1,18 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion';
 
+
 const PolitykaWysylki = () => {
+
+    useEffect(() => {
+        return () => {
+            var r = document.querySelector('.button-switch-book');
+            r.style.setProperty('opacity', '0');
+            setShowCart(false)
+        }
+    }, [])
+
     return (
         <>
             <motion.div className='policy-template'

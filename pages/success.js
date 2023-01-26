@@ -1,10 +1,17 @@
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import { BsBagCheckFill } from 'react-icons/bs';
+import React, { useEffect } from 'react'
 import { useStateContext } from './../context/StateContext';
 import { runFireworks } from './../lib/utils';
 
 const Success = () => {
+
+    useEffect(() => {
+        return () => {
+            var r = document.querySelector('.button-switch-book');
+            r.style.setProperty('opacity', '0');
+            setShowCart(false)
+        }
+    }, [])
 
     const { setCartItems, setTotalPrice, setTotalQuantities, setLoader } = useStateContext();
 
