@@ -5,14 +5,6 @@ import { useStateContext } from './../context/StateContext';
 
 const CanceledPage = () => {
 
-
-    useEffect(() => {
-        return () => {
-            var r = document.querySelector('.button-switch-book');
-            r.style.setProperty('opacity', '0');        
-        }
-    }, [])
-
     return (
 
         <div className='success-page-wrapper'>

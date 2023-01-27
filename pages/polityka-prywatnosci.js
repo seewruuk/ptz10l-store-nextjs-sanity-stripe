@@ -4,12 +4,7 @@ import React, { useEffect } from 'react'
 
 const PolitykaPrywatnosci = () => {
 
-    useEffect(() => {
-        return () => {
-            var r = document.querySelector('.button-switch-book');
-            r.style.setProperty('opacity', '0');
-        }
-    }, [])
+
 
     return (
         <>

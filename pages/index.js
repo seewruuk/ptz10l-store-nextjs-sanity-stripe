@@ -11,13 +11,7 @@ const Index = ({ products }) => {
   const discount = products[productId].price < 39.99 ? true : false;
   const available = products[productId].available ? true : false;
 
-  useEffect(() => {
-    return () => {
-      var r = document.querySelector('.button-switch-book');
-          r.style.setProperty('opacity', '100%');
-    }
-  }, [])
-  
+
 
 
   return (
