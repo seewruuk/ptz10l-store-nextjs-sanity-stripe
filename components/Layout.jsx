@@ -51,20 +51,23 @@ const Layout = ({ children }) => {
         <header>
           <Navbar />
         </header>
-        <AnimatePresence>
-          {
-            showCart && (
-              <motion.div key='loader'>
-                <Cart />
-              </motion.div>
-            )
-          }
+        <div>
 
-        </AnimatePresence>
+          <AnimatePresence>
+            {
+              showCart && (
+                <motion.div key='loader'>
+                  <Cart />
+                </motion.div>
+              )
+            }
+
+          </AnimatePresence>
 
 
-        {children}
+          {children}
 
+        </div>
         <footer>
           <Footer />
         </footer>

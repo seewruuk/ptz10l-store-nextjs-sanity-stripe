@@ -4,19 +4,17 @@ import { useStateContext } from './../context/StateContext';
 import { motion } from 'framer-motion'
 import { useEffect } from 'react';
 import Loader from '../components/Loader';
+
+
 const Index = ({ products }) => {
-
-
   const { qty, descQty, incQty, onAdd, buyNowButton, loader, productId } = useStateContext();
-
-  
   const discount = products[productId].price < 39.99 ? true : false;
   const available = products[productId].available ? true : false;
 
   useEffect(() => {
     return () => {
       var r = document.querySelector('.button-switch-book');
-          r.style.setProperty('opacity', '1');
+          r.style.setProperty('opacity', '100%');
     }
   }, [])
   

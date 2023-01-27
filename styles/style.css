@@ -53,7 +53,7 @@ input:focus {
 
 }
 .button-switch-book{
-  opacity: 0;
+  opacity: 1;
   padding: 5px 12px;
   background: var(--themeColor);
   color: #fff;
@@ -459,6 +459,7 @@ button {
 }
 
 .desc {
+  
   display: flex;
   flex-direction: column;
 
@@ -485,10 +486,9 @@ button {
 }
 
 .cart-container {
-  /* border: 1px solid green; */
   height: 100vh;
   width: 600px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 1);
   float: right;
   padding: 20px;
   box-sizing: border-box;
@@ -722,6 +722,7 @@ h5 {
 
   .main-container {
     padding: 0 12px;
+    box-sizing: border-box;
   }
 
   .home-page-container {
