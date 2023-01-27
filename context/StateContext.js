@@ -14,7 +14,7 @@ export const StateContext = ({ children }) => {
     const [productId, setProductId] = useState(1);
     const [startAnimation, setStartAnimation] = useState(false);
 
-    const [loader, setLoader] = useState(false);
+    const [loader, setLoader] = useState(true);
 
 
     let foundProduct;
@@ -42,34 +42,6 @@ export const StateContext = ({ children }) => {
         }, 1000);
     }
 
-    // const onAdd = (product, quantity) => {
-    //     const checkProductInCart = cartItems.find((item) => item._id === product._id);
-    //     setTotalPrice((prevTotalPrice) => {
-    //         return Number((prevTotalPrice + product.price * quantity).toFixed(2))
-    //     }
-    //     )
-    //     setTotalQuantities((prevTotalQuantity) => prevTotalQuantity + quantity);
-
-
-    //     if (checkProductInCart) {
-
-
-    //         const updatedCartItems = cartItems.map((cartProduct) => {
-    //             if (cartProduct._id === product._id) return {
-    //                 ...cartProduct,
-    //                 quantity: cartProduct.quantity + quantity
-    //             }
-
-    //         })
-
-    //         setCartItems(updatedCartItems);
-    //     } else {
-    //         product.quantity = quantity;
-
-    //         setCartItems([...cartItems, { ...product }]);
-    //     }
-    //     toast.success(`Pomyślnie dodano ${qty} sztuk do koszyka!`);
-    // }
 
 
     const onAdd = (product, quantity) => {
@@ -94,14 +66,6 @@ export const StateContext = ({ children }) => {
                 return cartProduct
             });
             setCartItems(newState);
-            // const updatedCartItems = cartItems.map((cartProduct) => {
-            //     if (cartProduct._id === product._id) return {
-            //         ...cartProduct,
-            //         quantity: cartProduct.quantity + quantity
-            //     }
-            // })
-
-            // setCartItems(updatedCartItems);
             
         } else {
             product.quantity = quantity;
@@ -112,24 +76,9 @@ export const StateContext = ({ children }) => {
     }
 
 
-
-    // const onRemove = (product) => {
-    //     foundProduct = cartItems.find((item) => item._id === product._id)
-    //     const newCartItems = cartItems.filter((item) => item._id !== product._id);
-
-    //     setTotalPrice((prevTotalPrice) => prevTotalPrice = 0);
-    //     setTotalQuantities((prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity)
-    //     setCartItems(newCartItems)
-
-    //     toast.success(`Usunięto produkt z koszyka`);
-    // }
-
     const onRemove = (product) => {
         foundProduct = cartItems.find((item) => item._id === product._id)
         const newCartItems = cartItems.filter((item) => item._id !== product._id);
-
-        // setTotalPrice((prevTotalPrice) => prevTotalPrice = prevTotalPrice - foundProduct.quantity * foundProduct.price);
-
         setTotalPrice((prevTotalPrice) => {
             let newPrice;
 

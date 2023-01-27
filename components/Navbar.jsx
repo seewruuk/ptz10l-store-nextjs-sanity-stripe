@@ -5,12 +5,12 @@ import { useStateContext } from './../context/StateContext';
 
 const Navbar = () => {
 
-  const { setShowCart, totalQuantities, toggleProductId } = useStateContext();
+  const { setShowCart, totalQuantities } = useStateContext();
 
   return (
     <div className='navbar-container'>
       <div>
-        <button className='button-switch-book' onClick={() => toggleProductId()}>Zmień książkę</button>
+        {/* <button className='button-switch-book' onClick={() => toggleProductId()}>Zmień książkę</button> */}
       </div>
       <div className='cart-button'>
 
