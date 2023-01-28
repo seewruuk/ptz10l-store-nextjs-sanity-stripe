@@ -8,6 +8,7 @@ import Link from 'next/link'
 
 const Cart = () => {
 
+
   const { setShowCart, cartItems, totalQuantities, totalPrice, onRemove, showCart } = useStateContext();
 
   function getWindowDimensions() {
@@ -24,7 +25,6 @@ const Cart = () => {
 
     useEffect(() => {
 
-      setShowCart(false)
 
       function handleResize() {
         setWindowDimensions(getWindowDimensions)

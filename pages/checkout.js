@@ -14,9 +14,7 @@ const Checkout = () => {
     const { cartItems, totalPrice, setShowCart, setCartItems } = useStateContext();
 
     useEffect(() => {
-        return () => {
             setShowCart(false)
-        }
     }, [])
 
 
