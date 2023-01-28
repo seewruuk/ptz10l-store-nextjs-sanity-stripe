@@ -161,16 +161,18 @@ const Index = ({ products }) => {
 
                 Zawiera ona szereg pytań dotyczących różnych obszarów Twojego <span style={{fontWeight: 'bolder'}}>życia,</span> od <span style={{fontWeight: 'bolder'}}>pracy</span> i <span style={{fontWeight: 'bolder'}}>kariery</span> po <span style={{fontWeight: 'bolder'}}>relacje</span> i <span style={{fontWeight: 'bolder'}}>pasje.</span><br /><br />
 
-                Co chcesz osiągnąć w życiu?<br /> Czy aktualnie robisz coś w tym kierunku?<br />
+                <i>Co chcesz osiągnąć w życiu?<br /> Czy aktualnie robisz coś w tym kierunku?<br />
                 Z kim za 10 lat zniknie Ci kontakt?<br />
-                Co chcesz w sobie zmienić?<br /><br />
+                Co chcesz w sobie zmienić?<br /><br /></i>
 
-                A to tylko przedsmak tego co czeka na Ciebie w środku!
+                A to tylko <span style={{fontWeight: 'bolder'}}>przedsmak</span> tego co czeka na Ciebie w środku!
 
-                Pozwól sobie na chwilę refleksji i odpowiedz na pytania szczerze.
-                Za dziesięć lat będziesz mieć okazję sprawdzić, jak wiele Twoich odpowiedzi się zmieniło i jak wiele z nich spełniło się. Ta książka to nie tylko zabawa, ale również motywacja do realizacji swoich marzeń i celów. Pozwól sobie na chwilę introspekcji i przekonaj się, co przyniesie przyszłość.<br /><br />
+                Pozwól sobie na chwilę refleksji i <span style={{fontWeight: 'bolder'}}>odpowiedz na pytania szczerze.</span>
+                Za dziesięć lat będziesz mieć okazję sprawdzić, jak wiele Twoich odpowiedzi się zmieniło i jak wiele z nich spełniło się. 
+                Ta książka to nie tylko zabawa, ale również <span style={{fontWeight: 'bolder'}}>motywacja do realizacji swoich marzeń i celów.</span> Pozwól sobie na chwilę introspekcji 
+                i przekonaj się, co przyniesie przyszłość.<br /><br />
 
-                Nie czekaj dłużej i rozpocznij swoją przygodę z książką "Przeczytaj to za 10 lat".
+                Nie czekaj dłużej i rozpocznij swoją przygodę z książką <span style={{fontWeight: 'bolder'}}>"Przeczytaj to za 10 lat".</span>
               </p>
             </div>
           </motion.div>
