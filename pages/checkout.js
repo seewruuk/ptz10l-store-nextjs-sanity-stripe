@@ -80,7 +80,6 @@ const Checkout = () => {
             </motion.div>
             <div className='checkout-container'>
                 <div className='checkout-wrapper'>
-
                     <div className="checkout-option1">
                         <div>
                             <h1>Zapłać za pobraniem</h1>

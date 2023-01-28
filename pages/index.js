@@ -156,13 +156,13 @@ const Index = ({ products }) => {
             <div className='desc'>
               <h3>Opis produktu:</h3>
               <p>
-                Zastanawiasz się, jakie decyzje podejmiesz w przyszłości?
-                Ta książka jest właśnie dla Ciebie!<br /><br />
+                Zastanawiasz się, jakie decyzje podejmiesz w przyszłości?<br />
+                <span style={{fontWeight: 'bolder'}}>Ta książka jest właśnie dla Ciebie!</span><br /><br />
 
-                Zawiera ona szereg pytań dotyczących różnych obszarów Twojego życia, od pracy i kariery po relacje i pasje.<br /><br />
+                Zawiera ona szereg pytań dotyczących różnych obszarów Twojego <span style={{fontWeight: 'bolder'}}>życia,</span> od <span style={{fontWeight: 'bolder'}}>pracy</span> i <span style={{fontWeight: 'bolder'}}>kariery</span> po <span style={{fontWeight: 'bolder'}}>relacje</span> i <span style={{fontWeight: 'bolder'}}>pasje.</span><br /><br />
 
-                Co chcesz osiągnąć w życiu? Czy aktualnie robisz coś w tym kierunku?<br /><br />
-                Z kim za 10 lat zniknie Ci kontakt?
+                Co chcesz osiągnąć w życiu?<br /> Czy aktualnie robisz coś w tym kierunku?<br />
+                Z kim za 10 lat zniknie Ci kontakt?<br />
                 Co chcesz w sobie zmienić?<br /><br />
 
                 A to tylko przedsmak tego co czeka na Ciebie w środku!
