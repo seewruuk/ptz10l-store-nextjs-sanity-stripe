@@ -24,6 +24,8 @@ const Cart = () => {
 
     useEffect(() => {
 
+      setShowCart(false)
+
       function handleResize() {
         setWindowDimensions(getWindowDimensions)
       }
