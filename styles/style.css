@@ -24,7 +24,6 @@
   height: 75vh;
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
 
 .switch-book-container{
@@ -36,6 +35,10 @@
 textarea:focus,
 input:focus {
   outline: none;
+}
+
+.form-content form{
+  overflow: hidden;
 }
 
 .checkout-wrapper {
@@ -690,7 +693,6 @@ h5 {
   right: 0;
   font-size: 60px;
   color: rgb(0, 0, 0);
-  border: 5px solid magenta;
   background: rgb(255, 255, 255);
 
 }

@@ -155,25 +155,42 @@ const Index = ({ products }) => {
 
             <div className='desc'>
               <h3>Opis produktu:</h3>
-              <p>
-                Zastanawiasz się, jakie decyzje podejmiesz w przyszłości?<br />
-                <span style={{fontWeight: 'bolder'}}>Ta książka jest właśnie dla Ciebie!</span><br /><br />
+              {
 
-                Zawiera ona szereg pytań dotyczących różnych obszarów Twojego <span style={{fontWeight: 'bolder'}}>życia,</span> od <span style={{fontWeight: 'bolder'}}>pracy</span> i <span style={{fontWeight: 'bolder'}}>kariery</span> po <span style={{fontWeight: 'bolder'}}>relacje</span> i <span style={{fontWeight: 'bolder'}}>pasje.</span><br /><br />
+                productId == 1 ? (
+                  <p>
+                    Zastanawiasz się, jakie decyzje podejmiesz w przyszłości?<br />
+                    <span style={{ fontWeight: 'bolder' }}>Ta książka jest właśnie dla Ciebie!</span><br /><br />
 
-                <i>Co chcesz osiągnąć w życiu?<br /> Czy aktualnie robisz coś w tym kierunku?<br />
-                Z kim za 10 lat zniknie Ci kontakt?<br />
-                Co chcesz w sobie zmienić?<br /><br /></i>
+                    Zawiera ona szereg pytań dotyczących różnych obszarów Twojego <span style={{ fontWeight: 'bolder' }}>życia,</span> od <span style={{ fontWeight: 'bolder' }}>pracy</span> i <span style={{ fontWeight: 'bolder' }}>kariery</span> po <span style={{ fontWeight: 'bolder' }}>relacje</span> i <span style={{ fontWeight: 'bolder' }}>pasje.</span><br /><br />
 
-                A to tylko <span style={{fontWeight: 'bolder'}}>przedsmak</span> tego co czeka na Ciebie w środku!
+                    <i>Co chcesz osiągnąć w życiu?<br /> Czy aktualnie robisz coś w tym kierunku?<br />
+                      Z kim za 10 lat zniknie Ci kontakt?<br />
+                      Co chcesz w sobie zmienić?<br /><br /></i>
 
-                Pozwól sobie na chwilę refleksji i <span style={{fontWeight: 'bolder'}}>odpowiedz na pytania szczerze.</span>
-                Za dziesięć lat będziesz mieć okazję sprawdzić, jak wiele Twoich odpowiedzi się zmieniło i jak wiele z nich spełniło się. 
-                Ta książka to nie tylko zabawa, ale również <span style={{fontWeight: 'bolder'}}>motywacja do realizacji swoich marzeń i celów.</span> Pozwól sobie na chwilę introspekcji 
-                i przekonaj się, co przyniesie przyszłość.<br /><br />
+                    A to tylko <span style={{ fontWeight: 'bolder' }}>przedsmak</span> tego co czeka na Ciebie w środku!
 
-                Nie czekaj dłużej i rozpocznij swoją przygodę z książką <span style={{fontWeight: 'bolder'}}>"Przeczytaj to za 10 lat".</span>
-              </p>
+                    Pozwól sobie na chwilę refleksji i <span style={{ fontWeight: 'bolder' }}>odpowiedz na pytania szczerze. </span>
+                    Za dziesięć lat będziesz mieć okazję sprawdzić, jak wiele Twoich odpowiedzi się zmieniło i jak wiele z nich spełniło się.
+                    Ta książka to nie tylko zabawa, ale również <span style={{ fontWeight: 'bolder' }}>motywacja do realizacji swoich marzeń i celów.</span> Pozwól sobie na chwilę introspekcji
+                    i przekonaj się, co przyniesie przyszłość.<br /><br />
+
+                    Nie czekaj dłużej i rozpocznij swoją przygodę z książką <span style={{ fontWeight: 'bolder' }}>"Przeczytaj to za 10 lat".</span>
+                  </p>
+                ) : (
+                  <p>
+                    Książka <span style={{ fontWeight: 'bolder' }}>"Przeczytajcie to za 10 lat"</span> to idealna propozycja dla par, które chcą <span style={{ fontWeight: 'bolder' }}>wzmocnić swoją relację</span> i lepiej poznać swoje marzenia i plany na przyszłość. <br /><br />
+                    <i>Kto zrobił pierwszy krok?<br />
+                    Kto pierwszy się zauroczył?<br />
+                    Co w sobie kochacie?<br />
+                    Czego w sobie nie lubicie?</i>
+                    <br /><br />Ta unikalna książka zawiera serię pytań, które skłonią was do refleksji nad tym, gdzie widzicie się za 10 lat i jakie cele chcecie osiągnąć razem.
+                    <br /><br />Dzięki niej, będziecie mogli lepiej poznać swoje pragnienia i wspólnie pracować nad ich realizacją. Ciekawa i inspirująca, ta książka to doskonałe narzędzie dla par, które
+                    chcą rozwijać swoją relację i razem budować lepszą przyszłość. Zachęcamy do zakupu i przeczytania jej razem za 10 lat!
+                  </p>
+                )
+              }
+
             </div>
           </motion.div>
 

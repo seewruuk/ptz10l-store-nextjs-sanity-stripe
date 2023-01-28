@@ -14,6 +14,7 @@ const Checkout = () => {
     const router = useRouter();
 
     const { cartItems, totalPrice, setShowCart, setCartItems } = useStateContext();
+    const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
         setShowCart(false)
@@ -63,6 +64,15 @@ const Checkout = () => {
 
         stripe.redirectToCheckout({ sessionId: data.id });
     }
+    const handleShowFormChange = (event) => {
+        event.preventDefault();
+        if (showForm) {
+            setShowForm(false)
+        } else {
+            setShowForm(true)
+        }
+    }
+
 
     return (
 
@@ -86,9 +96,24 @@ const Checkout = () => {
                             <h2 className='checkout-price'>Całkowity koszt: <span style={{ fontWeight: "bold" }}>{
                                 totalPrice + 19
                             } PLN </span> </h2>
+                            <button type='button' className='button-pay-with-stripe' onClick={handleShowFormChange}>
+                                {
+                                    showForm ? `Ukryj formularz` : `Pokaż formularz`
+                                }
+                            </button>
                         </div>
                         <div className='form-content'>
-                            <form onSubmit={submitHandler}>
+                            <motion.form onSubmit={submitHandler} initial={{
+                                height: showForm ? "100%" : "0"
+                            }}
+                                animate={{
+                                    height: showForm ? "100%" : "0",
+                                    transition: {
+                                        duration: 0.65,
+                                    }
+                                }}
+
+                            >
                                 <div className="formFlex">
                                     <input type="text" name="firstname" placeholder='Imię' required value={formState.firstname} onChange={handleFormChange} />
                                     <input type="text" name="secondname" placeholder='Nazwisko' required value={formState.secondname} onChange={handleFormChange} />
@@ -110,11 +135,7 @@ const Checkout = () => {
                                     <textarea name="warning" value={formState.warning} placeholder='uwagi' onChange={handleFormChange}></textarea>
                                 </div>
                                 <input type="submit" value="Złóż zamówienie" />
-
-
-
-
-                            </form>
+                            </motion.form>
                         </div>
                     </div>
 
