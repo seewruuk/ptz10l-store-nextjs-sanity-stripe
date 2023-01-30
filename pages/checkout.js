@@ -35,7 +35,7 @@ const Checkout = () => {
         const firstItem = cartItems[0] && cartItems[0].quantity
         const secondItem = cartItems[1] && cartItems[1].quantity
 
-        const total = totalPrice;
+        const total = totalPrice + 19;
         const id = await createOrder({ ...formState, total, firstItem, secondItem })
 
         setCartItems([]);
