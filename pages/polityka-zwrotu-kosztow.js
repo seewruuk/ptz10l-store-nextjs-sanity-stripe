@@ -25,12 +25,26 @@ const PolitykaKosztow = () => {
                 opacity: 0,
             }}
         >
+
             <h1>Polityka zwrotu kosztów: </h1>
-            <Link href="/">
+
+            {/* <Link href="/">
                 <button type="button" className="button-back-to-mail-page">
                     Powrót do strony głównej
                 </button>
-            </Link>
+            </Link> */}
+
+
+            <div style={{ marginTop: "50px" }}>
+                <Link href="/">
+                    <button type="button" className="button-back-to-mail-page">
+                        Powrót do strony głównej
+                    </button>
+                </Link>
+            </div>
+
+
+
             <div>
                 <ol>
                     <li>Zwrotu towaru możesz dokonać w ciągu 14 dni od dnia otrzymania przesyłki.</li>

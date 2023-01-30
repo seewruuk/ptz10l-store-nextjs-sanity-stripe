@@ -26,11 +26,13 @@ const PolitykaPrywatnosci = () => {
                 }}
             >
                 <h1>Polityka prywatności</h1>
-                <Link href="/">
-                    <button type="button" className="button-back-to-mail-page">
-                        Powrót do strony głównej
-                    </button>
-                </Link>
+                <div style={{ marginTop: "50px" }}>
+                    <Link href="/">
+                        <button type="button" className="button-back-to-mail-page">
+                            Powrót do strony głównej
+                        </button>
+                    </Link>
+                </div>
                 <div>
                     Poniższa Polityka Prywatności określa zasady zapisywania i uzyskiwania dostępu do danych na Urządzeniach Użytkowników korzystających z
                     Serwisu do celów świadczenia usług drogą elektroniczną przez Administratora oraz zasady gromadzenia i przetwarzania

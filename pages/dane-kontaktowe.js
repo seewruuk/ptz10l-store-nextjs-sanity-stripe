@@ -25,11 +25,13 @@ const DaneKontaktowe = () => {
             }}
         >
             <h1>Dane Kontaktowe</h1>
-            <Link href="/">
-                <button type="button" className="button-back-to-mail-page">
-                    Powrót do strony głównej
-                </button>
-            </Link>
+            <div>
+                    <Link href="/">
+                        <button type="button" className="button-back-to-mail-page">
+                            Powrót do strony głównej
+                        </button>
+                    </Link>
+                </div>
             <div>
                 Wszelkie pytania prosimy kierować na
                 <p>

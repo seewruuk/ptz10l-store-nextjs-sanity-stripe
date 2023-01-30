@@ -36,11 +36,13 @@ const Success = () => {
                         <u>nowakowskimarcel01@gmail.com</u>
                     </a>
                 </p>
-                <Link href="/">
-                    <button type="button" className="button-back-to-mail-page">
-                        Powrót do strony głównej
-                    </button>
-                </Link>
+                <div style={{ marginTop: "50px" }}>
+                    <Link href="/">
+                        <button type="button" className="button-back-to-mail-page">
+                            Powrót do strony głównej
+                        </button>
+                    </Link>
+                </div>
 
             </div>
         </div>

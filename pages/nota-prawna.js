@@ -25,11 +25,13 @@ const NotaPrawna = () => {
             }}
         >
             <h1>Nota prawna</h1>
-            <Link href="/">
-                <button type="button" className="button-back-to-mail-page">
-                    Powrót do strony głównej
-                </button>
-            </Link>
+            <div style={{ marginTop: "50px" }}>
+                <Link href="/">
+                    <button type="button" className="button-back-to-mail-page">
+                        Powrót do strony głównej
+                    </button>
+                </Link>
+            </div>
             <div>
                 <h3>Obowiązek informacyjny RODO</h3>
                 <p>
