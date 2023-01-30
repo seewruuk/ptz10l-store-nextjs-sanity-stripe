@@ -185,7 +185,7 @@ const Index = ({ products }) => {
                     Co w sobie kochacie?<br />
                     Czego w sobie nie lubicie?</i>
                     <br /><br />Ta unikalna książka zawiera serię pytań, które skłonią was do refleksji nad tym, gdzie widzicie się za 10 lat i jakie cele chcecie osiągnąć razem.
-                    <br /><br />Dzięki niej, będziecie mogli lepiej poznać swoje pragnienia i wspólnie pracować nad ich realizacją. Ciekawa i inspirująca, ta książka to doskonałe narzędzie dla par, które
+                    <br /><br />Dzięki niej, <span style={{ fontWeight: 'bolder' }}>będziecie mogli lepiej poznać swoje pragnienia i wspólnie pracować nad ich realizacją.</span> Ciekawa i inspirująca, ta książka to doskonałe narzędzie dla par, które
                     chcą rozwijać swoją relację i razem budować lepszą przyszłość. Zachęcamy do zakupu i przeczytania jej razem za 10 lat!
                   </p>
                 )
