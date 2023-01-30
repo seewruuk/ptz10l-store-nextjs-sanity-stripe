@@ -125,7 +125,7 @@ const Checkout = () => {
                                 <div className="formFlex">
                                     <input type="text" name="address" placeholder='Ulica' required value={formState.address} onChange={handleFormChange} />
                                     <input type="text" name="number" placeholder='Numer budynku' required value={formState.number} onChange={handleFormChange} />
-                                    <input type="text" name="apartment" placeholder='Numer lokalu' required value={formState.apartment} onChange={handleFormChange} />
+                                    <input type="text" name="apartment" placeholder='Numer lokalu' value={formState.apartment} onChange={handleFormChange} />
                                 </div>
                                 <div className="formFlex">
                                     <input type="text" name="postcode" placeholder='Kod pocztowy' required value={formState.postcode} onChange={handleFormChange} />
@@ -142,7 +142,7 @@ const Checkout = () => {
                     <div className="checkout-option2">
                         <h1>Zapłać Online</h1>
                         <h2 className='checkout-price'>Całkowity koszt: <span style={{ fontWeight: "bold" }}>{
-                            totalPrice + 16
+                            totalPrice + 14
                         } PLN </span> </h2>
                         <button type='button' className='button-pay-with-stripe' onClick={handleCheckout}>
                             Przejdź do płatności
