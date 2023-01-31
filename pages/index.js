@@ -187,6 +187,11 @@ const Index = ({ products }) => {
                     <br /><br />Ta unikalna książka zawiera serię pytań, które skłonią was do refleksji nad tym, gdzie widzicie się za 10 lat i jakie cele chcecie osiągnąć razem.
                     <br /><br />Dzięki niej, <span style={{ fontWeight: 'bolder' }}>będziecie mogli lepiej poznać swoje pragnienia i wspólnie pracować nad ich realizacją.</span> Ciekawa i inspirująca, ta książka to doskonałe narzędzie dla par, które
                     chcą rozwijać swoją relację i razem budować lepszą przyszłość. Zachęcamy do zakupu i przeczytania jej razem za 10 lat!
+                    <br/>&nbsp;
+                    <br/>&nbsp;
+                    <br/>&nbsp;
+
+                    
                   </p>
                 )
               }
@@ -195,7 +200,7 @@ const Index = ({ products }) => {
           </motion.div>
 
           <div className="right">
-            <div style={{ height: "100%", width: "100%", overflow: 'hidden', display: "flex", alignItems: 'center', justifyContent: "center" }}>
+            <div style={{ height: "200%", width: "100%", overflow: 'hidden', display: "flex", alignItems: 'center', justifyContent: "center" }}>
               <motion.img src={urlFor(products[productId].image[0])}
 
                 initial={{

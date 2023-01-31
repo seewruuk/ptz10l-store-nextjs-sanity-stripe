@@ -288,7 +288,6 @@ button {
 
 
 .home-page-container {
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -300,12 +299,14 @@ button {
 
 
 .left {
+
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .right {
+  box-sizing: border-box;
   flex: 1;
   display: flex;
   align-items: center;
@@ -669,11 +670,13 @@ h5 {
 }
 
 .button-back-to-mail-page {
+  /* border: 3px solid magenta; */
   background: black;
   color: #fff;
   height: 60px;
   width: 300px;
   font-weight: normal;
+  margin-top: 50px;
   transition: 0.35s ease-in-out;
 }
 
