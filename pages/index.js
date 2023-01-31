@@ -2,7 +2,6 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { client, urlFor } from '../lib/client';
 import { useStateContext } from './../context/StateContext';
 import { motion } from 'framer-motion'
-import { useEffect } from 'react';
 import Loader from '../components/Loader';
 
 
@@ -200,7 +199,7 @@ const Index = ({ products }) => {
           </motion.div>
 
           <div className="right">
-            <div style={{ height: "200%", width: "100%", overflow: 'hidden', display: "flex", alignItems: 'center', justifyContent: "center" }}>
+            <div style={{ width: "100%", overflow: 'hidden', display: "flex", alignItems: 'center', justifyContent: "center" }}>
               <motion.img src={urlFor(products[productId].image[0])}
 
                 initial={{

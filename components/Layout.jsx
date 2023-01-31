@@ -20,6 +20,8 @@ const Layout = ({ children }) => {
     setLoader(false)
   }, 5000);
 
+  const { productId } = useStateContext();
+
 
   return (
     <>
@@ -27,7 +29,9 @@ const Layout = ({ children }) => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-        <title>Przeczytaj to za 10 lat</title>
+        <title>
+          {productId == 0 ? "Przeczytajcie to za 10 lat" : "Przeczytaj to za 10 lat"}
+        </title>
       </Head>
       <script src="https://smtpjs.com/v3/smtp.js">
       </script>
