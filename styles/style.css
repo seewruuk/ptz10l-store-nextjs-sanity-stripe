@@ -15,9 +15,9 @@
 ::-webkit-scrollbar {
   display: none;
 }
-.cart-button{
-  z-index: 100;
-}
+/* .cart-button{
+  z-index: 0;
+} */
 
 
 
