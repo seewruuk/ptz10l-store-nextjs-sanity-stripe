@@ -15,10 +15,14 @@ const Checkout = () => {
 
     const { cartItems, totalPrice, setShowCart, setCartItems } = useStateContext();
     const [showForm, setShowForm] = useState(false);
+    const [disabled, setDisabled] = useState(false);
+
 
     useEffect(() => {
+        setDisabled(false)
         setShowCart(false)
     }, [])
+
 
 
 
@@ -29,6 +33,8 @@ const Checkout = () => {
         })
 
     const submitHandler = async (event) => {
+        setDisabled(true)
+        console.log("Zamówienie złożone")
 
         event.preventDefault();
 
@@ -134,7 +140,13 @@ const Checkout = () => {
                                 <div className="formFlex">
                                     <textarea name="warning" value={formState.warning} placeholder='uwagi' onChange={handleFormChange}></textarea>
                                 </div>
-                                <input type="submit" value="Złóż zamówienie" />
+                                <input type="submit"
+                                    value={
+                                        disabled ? "Wysyłanie" : "Prześlij"
+                                    }
+                                    disabled={disabled ? "disabled" : null}
+
+                                />
                             </motion.form>
                         </div>
                     </div>
