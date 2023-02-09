@@ -42,21 +42,25 @@ const Checkout = () => {
 
 
         emailjs.sendForm(
-            
-            
-        'service_5ylj1zv', 
-        'template_fefuijs', 
-        form.current, 
-        'NLFbDWeI5XzAlxCvx'
+
+
+            'service_5ylj1zv',
+            'template_fefuijs',
+            form.current,
+            'NLFbDWeI5XzAlxCvx'
         ).then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
 
 
-        const firstItem = cartItems[0] && cartItems[0].quantity
-        const secondItem = cartItems[1] && cartItems[1].quantity
+        const first = cartItems.find((a) => a._id === 'c6929922-c05a-4580-b7f4-b5cf2faad30a')
+        const second = cartItems.find((a) => a._id === '79c3757c-78b9-440b-b8d2-e4dbb2baf42c')
+
+
+        const firstItem = first ? first.quantity : 0;
+        const secondItem = second ? second.quantity : 0;
 
         const total = totalPrice + 19;
         const id = await createOrder({ ...formState, total, firstItem, secondItem })
