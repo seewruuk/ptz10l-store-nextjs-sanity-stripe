@@ -26,17 +26,17 @@ const DaneKontaktowe = () => {
         >
             <h1>Dane Kontaktowe</h1>
             <div>
-                    <Link href="/">
-                        <button type="button" className="button-back-to-mail-page">
-                            Powrót do strony głównej
-                        </button>
-                    </Link>
-                </div>
+                <Link href="/">
+                    <button type="button" className="button-back-to-mail-page">
+                        Powrót do strony głównej
+                    </button>
+                </Link>
+            </div>
             <div>
                 Wszelkie pytania prosimy kierować na
                 <p>
-                    <Link href="mailto:nowakowskimarcel01@gmail.com">
-                        nowakowskimarcel01@gmail.com
+                    <Link href="mailto:przeczytajtoza10lat@gmail.com">
+                        przeczytajtoza10lat@gmail.com
                     </Link>
                 </p>
 

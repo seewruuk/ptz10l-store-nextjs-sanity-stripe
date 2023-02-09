@@ -32,8 +32,8 @@ const Success = () => {
                 <p>W razie wszelkich pytań zapraszam do kontaktu:</p>
 
                 <p>
-                    <a class="email-ref" href="mailto:nowakowskimarcel01@gmail.com">
-                        <u>nowakowskimarcel01@gmail.com</u>
+                    <a class="email-ref" href="mailto:przeczytajtoza10lat@gmail.com">
+                        <u>przeczytajtoza10lat@gmail.com</u>
                     </a>
                 </p>
                 <div style={{ marginTop: "50px" }}>

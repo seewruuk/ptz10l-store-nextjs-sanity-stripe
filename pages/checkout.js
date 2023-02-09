@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useStateContext } from './../context/StateContext';
 import { createOrder } from './../lib/orderHandler';
 import getStripe from '../lib/getStripe';
@@ -6,6 +6,8 @@ import toast from 'react-hot-toast';
 import { Router, useRouter } from 'next/router';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+
 
 
 
@@ -37,6 +39,21 @@ const Checkout = () => {
         console.log("Zamówienie złożone")
 
         event.preventDefault();
+
+
+        emailjs.sendForm(
+            
+            
+        'service_5ylj1zv', 
+        'template_fefuijs', 
+        form.current, 
+        'NLFbDWeI5XzAlxCvx'
+        ).then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+
 
         const firstItem = cartItems[0] && cartItems[0].quantity
         const secondItem = cartItems[1] && cartItems[1].quantity
@@ -79,6 +96,11 @@ const Checkout = () => {
         }
     }
 
+    const form = useRef();
+
+
+
+
 
     return (
 
@@ -118,6 +140,7 @@ const Checkout = () => {
                                         duration: 0.65,
                                     }
                                 }}
+                                ref={form}
 
                             >
                                 <div className="formFlex">
