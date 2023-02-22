@@ -3,6 +3,8 @@ import { client, urlFor } from '../lib/client';
 import { useStateContext } from './../context/StateContext';
 import { motion } from 'framer-motion'
 import Loader from '../components/Loader';
+import { useState } from 'react';
+
 
 
 const Index = ({ products }) => {
@@ -10,7 +12,7 @@ const Index = ({ products }) => {
   const discount = products[productId].price < 39.99 ? true : false;
   const available = products[productId].available ? true : false;
 
-
+  const [warning, setWarning] = useState(true);
 
 
   return (
@@ -33,8 +35,42 @@ const Index = ({ products }) => {
     ) : (
 
       <>
+
+        {
+          warning ? (
+            <motion.div className='warning'
+              initial={{
+                y: 200,
+                opacity: 0
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                  delay: 2,
+                }
+              }}
+            >
+              <div style={{ maxWidth: "850px", background: "none" }}>
+
+                <h1>Szanowni Klienci</h1>
+                <p>Chcielibyśmy poinformować, że ze względu na urlop naszego zespołu, wszelkie zamówienia złożone
+                  na naszej stronie internetowej będą realizowane <u>dopiero od 8 marca.</u> Przepraszamy za ewentualne
+                  niedogodności i zapewniamy, że jak tylko wrócimy do pracy, będziemy pracować nad zrealizowaniem
+                  Waszych zamówień jak najszybciej.</p>
+                <p>Dziękujemy za zrozumienie i pozdrawiamy serdecznie</p>
+                <p style={{marginBottom: "50px"}}>Zespół Przeczytaj to za 10 lat</p>
+                <button className='button-add-to-cart-available' onClick={() => setWarning(false)}>Przejdź na strone</button>
+              </div>
+            </motion.div>
+          ) : (<></>)
+        }
+
+
         <motion.div className='switch-book-container' initial={{ opacity: 0 }}
           animate={{
+
             opacity: 1,
             transition: {
               delay: 1,
@@ -180,17 +216,17 @@ const Index = ({ products }) => {
                   <p>
                     Książka <span style={{ fontWeight: 'bolder' }}>"Przeczytajcie to za 10 lat"</span> to idealna propozycja dla par, które chcą <span style={{ fontWeight: 'bolder' }}>wzmocnić swoją relację</span> i lepiej poznać swoje marzenia i plany na przyszłość. <br /><br />
                     <i>Kto zrobił pierwszy krok?<br />
-                    Kto pierwszy się zauroczył?<br />
-                    Co w sobie kochacie?<br />
-                    Czego w sobie nie lubicie?</i>
+                      Kto pierwszy się zauroczył?<br />
+                      Co w sobie kochacie?<br />
+                      Czego w sobie nie lubicie?</i>
                     <br /><br />Ta unikalna książka zawiera serię pytań, które skłonią was do refleksji nad tym, gdzie widzicie się za 10 lat i jakie cele chcecie osiągnąć razem.
                     <br /><br />Dzięki niej, <span style={{ fontWeight: 'bolder' }}>będziecie mogli lepiej poznać swoje pragnienia i wspólnie pracować nad ich realizacją.</span> Ciekawa i inspirująca, ta książka to doskonałe narzędzie dla par, które
                     chcą rozwijać swoją relację i razem budować lepszą przyszłość. Zachęcamy do zakupu i przeczytania jej razem za 10 lat!
-                    <br/>&nbsp;
-                    <br/>&nbsp;
-                    <br/>&nbsp;
+                    <br />&nbsp;
+                    <br />&nbsp;
+                    <br />&nbsp;
 
-                    
+
                   </p>
                 )
               }
