@@ -36,36 +36,7 @@ const Index = ({ products }) => {
 
       <>
 
-        {
-          warning ? (
-            <motion.div className='warning'
-              initial={{
-                y: 200,
-                opacity: 0
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-                transition: {
-                  duration: 1,
-                  delay: 2,
-                }
-              }}
-            >
-              <div style={{ maxWidth: "850px", background: "none" }}>
-
-                <h1>Szanowni Klienci</h1>
-                <p>Chcielibyśmy poinformować, że ze względu na urlop naszego zespołu, wszelkie zamówienia złożone
-                  na naszej stronie internetowej będą realizowane <u>dopiero od 8 marca.</u> Przepraszamy za ewentualne
-                  niedogodności i zapewniamy, że jak tylko wrócimy do pracy, będziemy pracować nad zrealizowaniem
-                  Waszych zamówień jak najszybciej.</p>
-                <p>Dziękujemy za zrozumienie i pozdrawiamy serdecznie</p>
-                <p style={{marginBottom: "50px"}}>Zespół Przeczytaj to za 10 lat</p>
-                <button className='button-add-to-cart-available' onClick={() => setWarning(false)}>Przejdź na strone</button>
-              </div>
-            </motion.div>
-          ) : (<></>)
-        }
+        
 
 
         <motion.div className='switch-book-container' initial={{ opacity: 0 }}
